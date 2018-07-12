@@ -21,24 +21,34 @@ public class SqlConnection {
 
 	public void connect() {
 		
-		try {
-			connection = DriverManager.getConnection(urlbase+host+"/" + database, user, pass);
-			System.out.println("connected !");
-		} catch (SQLException e) {
-			System.out.println("connection error !!!");
-			e.printStackTrace();
+		if(!isConnected()) {
+			
+			try {
+				connection = DriverManager.getConnection(urlbase+host+"/" + database, user, pass);
+				System.out.println("connected !");
+			} catch (SQLException e) {
+				System.out.println("connection error !!!");
+				e.printStackTrace();
+			}
 		}
+		
+		
 		
 	}
 	
 	public void disconnect() {
 		
-		try {
-			connection.close();
-		} catch (SQLException e) {
+		if(isConnected()) {
 			
-			e.printStackTrace();
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			
 		}
+		
 		
 	}
 
