@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.bukkit.entity.Player;
+
 public class SqlConnection {
 
 	private Connection connection;
@@ -57,4 +59,28 @@ public class SqlConnection {
 		return connection != null;
 	}
 	
+	public void createAccount(Player player) {
+		
+		
+	}
+	
+	public boolean hasAccount(Player player) {
+		
+		return false;
+	}
+	
+	public int getMoney(Player player) {
+		
+		return 0;
+	}
+	
+	public void addMoney(Player player) {
+		
+		
+	}
+	
+	public void removeMoney(Player player) {
+		
+		
+	}
 }
