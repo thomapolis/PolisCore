@@ -15,7 +15,7 @@ public class PolisCore extends JavaPlugin {
 	public void onEnable() {
 		
 		//Init
-		sql = new SqlConnection("jdbc://", "localhost", "servermc", "root", "");
+		sql = new SqlConnection("jdbc:mysql://", "localhost", "servermc", "root", "");
 		sql.connect();
 		
 		setPrefix(ChatColor.GRAY+"["+ChatColor.RED+"PolisCore"+ChatColor.GRAY+"] ");
