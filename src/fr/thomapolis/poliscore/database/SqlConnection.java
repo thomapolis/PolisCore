@@ -1,7 +1,9 @@
-package database;
+package fr.thomapolis.poliscore.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.bukkit.entity.Player;
@@ -61,10 +63,40 @@ public class SqlConnection {
 	
 	public void createAccount(Player player) {
 		
+		if(!hasAccount(player)) {
+			
+			try {
+				PreparedStatement q = connection.prepareStatement("INSERT INTO joueurs(uuid,money,rank) VALUES (?,?,?)");
+				q.setString(1, player.getUniqueId().toString());
+				q.setInt(2, 100);
+				q.setString(3, "joueur");
+				q.execute();
+				q.close();
+				
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+			
+		}
 		
 	}
 	
 	public boolean hasAccount(Player player) {
+		
+		try {
+			PreparedStatement q = connection.prepareStatement("SELECT uuid FROM joueurs WHERE uuid = ?");
+			q.setString(1, player.getUniqueId().toString());
+			
+			ResultSet result = q.executeQuery();
+			boolean hasAccount = result.next();
+			
+			return hasAccount;
+		
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
 		
 		return false;
 	}
