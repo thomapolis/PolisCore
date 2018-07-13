@@ -1,5 +1,7 @@
 package fr.thomapolis.poliscore.cosmeticranks;
 
+import java.util.List;
+
 import org.bukkit.ChatColor;
 
 public abstract class CosmeticRank {
@@ -10,7 +12,7 @@ public abstract class CosmeticRank {
 	
 	public abstract ChatColor getColor();
 	
-	public abstract int[] getCosmetics();
+	public abstract List<String> getCosmetics();
 	
 	public String getPrefix() {
 		

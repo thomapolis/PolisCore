@@ -1,5 +1,8 @@
 package fr.thomapolis.poliscore.cosmeticranks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.ChatColor;
 
 public class CRNovice extends CosmeticRank {
@@ -12,7 +15,7 @@ public class CRNovice extends CosmeticRank {
 
 	@Override
 	public String getSymbole() {
-		return "";
+		return "◎";
 	}
 
 	@Override
@@ -22,9 +25,12 @@ public class CRNovice extends CosmeticRank {
 	}
 	
 	@Override
-	public int[] getCosmetics() {
-		// XXX Auto-generated method stub
-		return null;
+	public List<String> getCosmetics() {
+		
+		List<String> cosmetics = new ArrayList<>();
+		cosmetics.add("1");
+		
+		return cosmetics;
 	}
 
 }
