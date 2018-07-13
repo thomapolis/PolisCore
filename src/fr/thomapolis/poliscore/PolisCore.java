@@ -1,10 +1,12 @@
 package fr.thomapolis.poliscore;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.thomapolis.poliscore.database.SqlConnection;
 import fr.thomapolis.poliscore.listeners.ListenerPlayer;
+import fr.thomapolis.poliscore.polisclass.PolisPlayer;
 import fr.thomapolis.poliscore.type.RankType;
 
 public class PolisCore extends JavaPlugin {
@@ -59,5 +61,10 @@ public class PolisCore extends JavaPlugin {
 	public RankType getRankType() {
 		
 		return this.rankType;
+	}
+	
+	public PolisPlayer getPolisPlayer(Player player) {
+		
+		return new PolisPlayer(player, this);
 	}
 }

@@ -20,12 +20,16 @@ public class PolisPlayer {
 		this.uuid = player.getUniqueId().toString();
 		this.money = core.getSQL().getMoney(player);
 		this.rank = core.getRankType().getRank(core.getSQL().getRank(player));
-		
 	}
 	
 	public int getMoney() {
 		
 		return this.money;
+	}
+	
+	public Rank getRank() {
+		
+		return this.rank;
 	}
 	
 }
