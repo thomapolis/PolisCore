@@ -75,6 +75,7 @@ public class SqlConnection {
 				q.close();
 				
 				System.out.println(player.getName()+" a bien été enregistré sur la BDD");
+				System.out.println(getId(player)+" "+getMoney(player)+" "+getRank(player));
 				
 			} catch (SQLException e) {
 
@@ -110,7 +111,7 @@ public class SqlConnection {
 		
 		try {
 			
-			PreparedStatement q = connection.prepareStatement("SELECT money FROM joueursData WHERE UUID = ?");
+			PreparedStatement q = connection.prepareStatement("SELECT money FROM joueursData WHERE uuid = ?");
 			q.setString(1, player.getUniqueId().toString());
 			
 			int money = 0;
@@ -137,14 +138,14 @@ public class SqlConnection {
 		
 		try {
 			
-			PreparedStatement q = connection.prepareStatement("SELECT ID FROM joueursData WHERE UUID = ?");
+			PreparedStatement q = connection.prepareStatement("SELECT id FROM joueursData WHERE uuid = ?");
 			q.setString(1, player.getUniqueId().toString());
 			
 			int id = 0;
 			ResultSet rs = q.executeQuery();
 			
 			while(rs.next()) {
-				id = rs.getInt("ID");
+				id = rs.getInt("id");
 				
 			}
 			
@@ -164,7 +165,7 @@ public class SqlConnection {
 		
 		try {
 			
-			PreparedStatement q = connection.prepareStatement("SELECT rank FROM joueursData WHERE UUID = ?");
+			PreparedStatement q = connection.prepareStatement("SELECT rank FROM joueursData WHERE uuid = ?");
 			q.setString(1, player.getUniqueId().toString());
 			
 			String rank = "";
