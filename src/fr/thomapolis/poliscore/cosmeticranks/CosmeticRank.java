@@ -6,6 +6,8 @@ import org.bukkit.ChatColor;
 
 public abstract class CosmeticRank {
 
+	public abstract String getName();
+	
 	public abstract int getPower();
 	
 	public abstract String getSymbole();

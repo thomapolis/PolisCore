@@ -8,6 +8,12 @@ import org.bukkit.ChatColor;
 public class CRNovice extends CosmeticRank {
 
 	@Override
+	public String getName() {
+		
+		return "novice";
+	}
+	
+	@Override
 	public int getPower() {
 
 		return 0;
@@ -15,7 +21,7 @@ public class CRNovice extends CosmeticRank {
 
 	@Override
 	public String getSymbole() {
-		return "▼";
+		return "✿";
 	}
 
 	@Override
