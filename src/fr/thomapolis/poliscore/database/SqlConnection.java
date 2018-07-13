@@ -66,7 +66,7 @@ public class SqlConnection {
 		if(!hasAccount(player)) {
 			
 			try {
-				PreparedStatement q = connection.prepareStatement("INSERT INTO joueursData(uuid,money,rank) VALUES (?,?,?)");
+				PreparedStatement q = connection.prepareStatement("INSERT INTO joueursData(UUID,money,rank) VALUES (?,?,?)");
 				q.setString(1, player.getUniqueId().toString());
 				q.setInt(2, 100);
 				q.setString(3, "joueur");
