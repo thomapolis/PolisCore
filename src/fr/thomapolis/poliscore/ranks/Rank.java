@@ -6,8 +6,8 @@ public abstract class Rank {
 
 	public abstract String getName();
 	
-	public abstract String prefix();
+	public abstract String getPrefix();
 	
-	public abstract List<String> perms();
+	public abstract List<String> getPerms();
 	
 }

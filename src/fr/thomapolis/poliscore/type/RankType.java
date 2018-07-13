@@ -3,6 +3,7 @@ package fr.thomapolis.poliscore.type;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.thomapolis.poliscore.ranks.Admin;
 import fr.thomapolis.poliscore.ranks.Rank;
 
 public class RankType {
@@ -17,7 +18,7 @@ public class RankType {
 	
 	public static void register() {
 		
-		
+		ranks.add(new Admin());
 		
 	}
 	
