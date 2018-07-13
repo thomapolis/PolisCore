@@ -108,6 +108,28 @@ public class SqlConnection {
 	
 	public int getMoney(Player player) {
 		
+		try {
+			
+			PreparedStatement q = connection.prepareStatement("SELECT money FROM joueursData WHERE UUID = ?");
+			q.setString(1, player.getUniqueId().toString());
+			
+			int money = 0;
+			ResultSet rs = q.executeQuery();
+			
+			while(rs.next()) {
+				money = rs.getInt("money");
+				
+			}
+			
+			q.close();
+			
+			return money;
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
 		return 0;
 	}
 	
