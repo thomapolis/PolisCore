@@ -8,17 +8,19 @@ import fr.thomapolis.poliscore.ranks.Rank;
 
 public class RankType {
 
-	private static List<Rank> ranks;
+	private List<Rank> ranks;
 	
 	public RankType() {
 		
-		ranks = new ArrayList<>();
+		this.ranks = new ArrayList<>();
+		
+		register();
 		
 	}
 	
-	public static void register() {
+	public void register() {
 		
-		ranks.add(new Admin());
+		this.ranks.add(new Admin());
 		
 	}
 	

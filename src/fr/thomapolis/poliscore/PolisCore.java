@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.thomapolis.poliscore.database.SqlConnection;
 import fr.thomapolis.poliscore.listeners.ListenerPlayer;
+import fr.thomapolis.poliscore.type.RankType;
 
 public class PolisCore extends JavaPlugin {
 	
@@ -12,12 +13,15 @@ public class PolisCore extends JavaPlugin {
 	
 	private String prefix;
 	
+	public RankType rankType;
+	
 	@Override
 	public void onEnable() {
 		
 		//Init
 		sql = new SqlConnection("jdbc:mysql://", "localhost", "servermc", "root", "");
 		sql.connect();
+		rankType = new RankType();
 		
 		setPrefix(ChatColor.GRAY+"["+ChatColor.RED+"PolisCore"+ChatColor.GRAY+"] ");
 		
@@ -50,5 +54,10 @@ public class PolisCore extends JavaPlugin {
 	public void registerEvents() {
 		
 		this.getServer().getPluginManager().registerEvents(new ListenerPlayer(this), this);
+	}
+	
+	public RankType getRankType() {
+		
+		return this.rankType;
 	}
 }
