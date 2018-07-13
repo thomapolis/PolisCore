@@ -132,14 +132,4 @@ public class SqlConnection {
 		
 		return 0;
 	}
-	
-	public void addMoney(Player player) {
-		
-		
-	}
-	
-	public void removeMoney(Player player) {
-		
-		
-	}
 }
