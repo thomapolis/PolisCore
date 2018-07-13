@@ -15,7 +15,7 @@ public class CRNovice extends CosmeticRank {
 
 	@Override
 	public String getSymbole() {
-		return "◎";
+		return "▼";
 	}
 
 	@Override
