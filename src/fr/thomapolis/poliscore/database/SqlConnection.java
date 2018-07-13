@@ -132,4 +132,58 @@ public class SqlConnection {
 		
 		return 0;
 	}
+	
+	public int getId(Player player) {
+		
+		try {
+			
+			PreparedStatement q = connection.prepareStatement("SELECT ID FROM joueursData WHERE UUID = ?");
+			q.setString(1, player.getUniqueId().toString());
+			
+			int id = 0;
+			ResultSet rs = q.executeQuery();
+			
+			while(rs.next()) {
+				id = rs.getInt("ID");
+				
+			}
+			
+			q.close();
+			
+			return id;
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	public String getRank(Player player) {
+		
+		try {
+			
+			PreparedStatement q = connection.prepareStatement("SELECT rank FROM joueursData WHERE UUID = ?");
+			q.setString(1, player.getUniqueId().toString());
+			
+			String rank = "";
+			ResultSet rs = q.executeQuery();
+			
+			while(rs.next()) {
+				rank = rs.getString("rank");
+				
+			}
+			
+			q.close();
+			
+			return rank;
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }
