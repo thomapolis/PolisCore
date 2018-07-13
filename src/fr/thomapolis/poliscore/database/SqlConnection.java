@@ -66,7 +66,7 @@ public class SqlConnection {
 		if(!hasAccount(player)) {
 			
 			try {
-				PreparedStatement q = connection.prepareStatement("INSERT INTO joueurs(uuid,money,rank) VALUES (?,?,?)");
+				PreparedStatement q = connection.prepareStatement("INSERT INTO joueursData(uuid,money,rank) VALUES (?,?,?)");
 				q.setString(1, player.getUniqueId().toString());
 				q.setInt(2, 100);
 				q.setString(3, "joueur");
@@ -85,11 +85,13 @@ public class SqlConnection {
 	public boolean hasAccount(Player player) {
 		
 		try {
-			PreparedStatement q = connection.prepareStatement("SELECT uuid FROM joueurs WHERE uuid = ?");
+			PreparedStatement q = connection.prepareStatement("SELECT uuid FROM joueursData WHERE uuid = ?");
 			q.setString(1, player.getUniqueId().toString());
 			
 			ResultSet result = q.executeQuery();
 			boolean hasAccount = result.next();
+			
+			q.close();
 			
 			return hasAccount;
 		
