@@ -14,6 +14,12 @@ public class Admin extends Rank {
 	}
 
 	@Override
+	public ChatColor getColorName() {
+		
+		return ChatColor.RED;
+	}
+	
+	@Override
 	public String getPrefix() {
 
 		return ChatColor.RED+"["+ChatColor.DARK_RED+"Administrateur"+ChatColor.RED+"] ";
