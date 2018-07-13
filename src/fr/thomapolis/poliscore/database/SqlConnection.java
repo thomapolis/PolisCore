@@ -187,4 +187,31 @@ public class SqlConnection {
 		
 		return null;
 	}
+	
+	public int getCosmeticPower(Player player) {
+		
+		try {
+			
+			PreparedStatement q = connection.prepareStatement("SELECT cosmeticrank FROM joueursData WHERE uuid = ?");
+			q.setString(1, player.getUniqueId().toString());
+			
+			int power = 0;
+			ResultSet rs = q.executeQuery();
+			
+			while(rs.next()) {
+				power = rs.getInt("cosmeticrank");
+				
+			}
+			
+			q.close();
+			
+			return power;
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }
