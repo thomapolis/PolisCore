@@ -23,7 +23,7 @@ public class PolisCore extends JavaPlugin {
 		
 		System.out.println(getPrefix()+"PolisCore activate");
 		
-		
+		registerEvents();
 	}
 	
 	@Override
