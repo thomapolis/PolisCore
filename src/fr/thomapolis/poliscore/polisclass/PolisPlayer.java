@@ -12,6 +12,7 @@ public class PolisPlayer {
 	private String uuid;
 	private int money;
 	private Rank rank;
+	private int cosmeticRank;
 	
 	public PolisPlayer(Player player, PolisCore core) {
 		
@@ -20,6 +21,7 @@ public class PolisPlayer {
 		this.uuid = player.getUniqueId().toString();
 		this.money = core.getSQL().getMoney(player);
 		this.rank = core.getRankType().getRank(core.getSQL().getRank(player));
+		this.cosmeticRank =
 	}
 	
 	public int getMoney() {
