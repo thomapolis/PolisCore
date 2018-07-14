@@ -1,5 +1,6 @@
 package fr.thomapolis.poliscore.ranks;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -26,8 +27,10 @@ public class Joueur extends Rank {
 
 	@Override
 	public List<String> getPerms() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		List<String> perms = new ArrayList<>();
+		
+		return perms;
 	}
 
 }
