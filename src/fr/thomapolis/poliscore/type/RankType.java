@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.thomapolis.poliscore.ranks.Admin;
+import fr.thomapolis.poliscore.ranks.Joueur;
 import fr.thomapolis.poliscore.ranks.Rank;
 
 public class RankType {
@@ -21,6 +22,7 @@ public class RankType {
 	public void register() {
 		
 		this.ranks.add(new Admin());
+		this.ranks.add(new Joueur());
 		
 	}
 	
