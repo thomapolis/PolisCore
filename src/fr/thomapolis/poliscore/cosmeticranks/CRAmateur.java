@@ -1,5 +1,6 @@
 package fr.thomapolis.poliscore.cosmeticranks;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.ChatColor;
@@ -21,7 +22,7 @@ public class CRAmateur extends CosmeticRank {
 	@Override
 	public String getSymbole() {
 
-		return "◈";
+		return "❋";
 	}
 
 	@Override
@@ -32,8 +33,10 @@ public class CRAmateur extends CosmeticRank {
 
 	@Override
 	public List<String> getCosmetics() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		List<String> list = new ArrayList<>();
+		
+		return list;
 	}
 
 }
