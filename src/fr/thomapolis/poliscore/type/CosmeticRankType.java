@@ -3,6 +3,7 @@ package fr.thomapolis.poliscore.type;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.thomapolis.poliscore.cosmeticranks.CRAmateur;
 import fr.thomapolis.poliscore.cosmeticranks.CRNovice;
 import fr.thomapolis.poliscore.cosmeticranks.CosmeticRank;
 
@@ -19,6 +20,7 @@ public class CosmeticRankType {
 	public void register() {
 		
 		this.ranks.add(new CRNovice());
+		this.ranks.add(new CRAmateur());
 		
 	}
 	

@@ -77,6 +77,8 @@ public class SqlConnection {
 				System.out.println(player.getName()+" a bien été enregistré sur la BDD");
 				System.out.println(getId(player)+" "+getMoney(player)+" "+getRank(player));
 				
+				player.kickPlayer("Initialisation dans la BDD");
+				
 			} catch (SQLException e) {
 
 				e.printStackTrace();

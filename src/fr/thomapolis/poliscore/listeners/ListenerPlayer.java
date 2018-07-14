@@ -1,6 +1,7 @@
 package fr.thomapolis.poliscore.listeners;
 
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -17,7 +18,7 @@ public class ListenerPlayer implements Listener {
 		
 	}
 
-	@EventHandler
+	@EventHandler (priority = EventPriority.HIGH)
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		
 		sql.createAccount(event.getPlayer());
