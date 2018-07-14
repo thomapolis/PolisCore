@@ -20,4 +20,14 @@ public abstract class CosmeticRank {
 		
 		return getColor()+getSymbole();
 	}
+	
+	public boolean hasCosmetics(String id) {
+		
+		if(getCosmetics().contains(id)) {
+			
+			return true;
+		}
+		
+		return false;
+	}
 }

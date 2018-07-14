@@ -10,7 +10,7 @@ public class CRNovice extends CosmeticRank {
 	@Override
 	public String getName() {
 		
-		return "novice";
+		return "Novice";
 	}
 	
 	@Override
