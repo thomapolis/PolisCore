@@ -29,9 +29,9 @@ public class Admin extends Rank {
 	public List<String> getPerms() {
 		
 		List<String> perms = new ArrayList<>();
+		perms.add("hub.inventory");
 		
-		
-		return null;
+		return perms;
 	}
 
 }
