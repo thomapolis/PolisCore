@@ -8,26 +8,26 @@ public class CRAmateur extends CosmeticRank {
 
 	@Override
 	public String getName() {
-		// XXX Auto-generated method stub
-		return null;
+		
+		return "amateur";
 	}
 
 	@Override
 	public int getPower() {
-		// XXX Auto-generated method stub
-		return 0;
+
+		return 1;
 	}
 
 	@Override
 	public String getSymbole() {
-		// XXX Auto-generated method stub
-		return null;
+
+		return "◈";
 	}
 
 	@Override
 	public ChatColor getColor() {
-		// XXX Auto-generated method stub
-		return null;
+
+		return ChatColor.GREEN;
 	}
 
 	@Override
