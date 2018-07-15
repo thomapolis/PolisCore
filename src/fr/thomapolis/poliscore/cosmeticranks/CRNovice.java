@@ -35,6 +35,7 @@ public class CRNovice extends CosmeticRank {
 		
 		List<String> cosmetics = new ArrayList<>();
 		cosmetics.add("1");
+		cosmetics.add("2");
 		
 		return cosmetics;
 	}
